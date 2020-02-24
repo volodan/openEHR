@@ -1,17 +1,18 @@
-archetype (adl_version=1.4; uid=30dad108-9c3b-4dec-b038-673d11c4ab34)
+archetype (adl_version=2.0.6; rm_release=1.0.3; uid=30dad108-9c3b-4dec-b038-673d11c4ab34)
 	openEHR-EHR-COMPOSITION.test-work.v1.0.0
 
 language
 	original_language = <[ISO_639-1::en]>
 
 description
+	lifecycle_state = <"unmanaged">
 	original_author = <
 		["date"] = <"2020-02-11">
 	>
-	lifecycle_state = <"unmanaged">
 	details = <
 		["en"] = <
 			language = <[ISO_639-1::en]>
+			purpose = <"???">
 		>
 	>
 	other_details = <
@@ -24,39 +25,37 @@ description
 	>
 
 definition
-	COMPOSITION[at0000] matches {    -- test
+	COMPOSITION[id1] matches {	-- test
 		category matches {
-			DV_CODED_TEXT[at0001] matches {    -- Coded text
-				defining_code matches {
-					[openehr::433]
-				}
+			DV_CODED_TEXT[id2] matches {	-- Coded text
+				defining_code matches {[at1]}
 			}
 		}
 		context matches {
-			EVENT_CONTEXT[at0002] matches {    -- Event Context
+			EVENT_CONTEXT[id3] matches {	-- Event Context
 				other_context matches {
-					ITEM_TREE[at0003] matches {*}    -- Item tree
+					ITEM_TREE[id4] 
 				}
 				health_care_facility matches {
-					PARTY_IDENTIFIED[at0005] matches {*}    -- Nemocnica
+					PARTY_IDENTIFIED[id6] 	-- Nemocnica
 				}
 			}
 		}
 		content cardinality matches {0..*; unordered} matches {
-			SECTION[at0004] occurrences matches {0..1} matches {    -- SECTION
+			SECTION[id5] occurrences matches {0..1} matches {	-- SECTION
 				items cardinality matches {0..*; unordered} matches {
-					OBSERVATION[at0007] occurrences matches {0..1} matches {    -- nalez
+					OBSERVATION[id8] occurrences matches {0..1} matches {	-- nalez
 						data matches {
-							HISTORY[at0006] matches {    -- History
+							HISTORY[id7] matches {
 								events cardinality matches {0..*; unordered} matches {
-									EVENT[at0009] occurrences matches {0..1} matches {    -- EVENT
+									EVENT[id10] occurrences matches {0..1} matches {	-- EVENT
 										data matches {
-											ITEM_TREE[at0010] matches {    -- Item tree
+											ITEM_TREE[id11] matches {
 												items cardinality matches {0..*; unordered} matches {
-													CLUSTER[at0011] occurrences matches {0..1} matches {    -- CLUSTER
+													CLUSTER[id12] occurrences matches {0..1} matches {	-- CLUSTER
 														items cardinality matches {1..*; unordered} matches {
-															ELEMENT[at0012] occurrences matches {0..1} matches {*}    -- hmotnost
-															ELEMENT[at0013] occurrences matches {0..1} matches {*}    -- vyska
+															ELEMENT[id13] occurrences matches {0..1} 	-- hmotnost
+															ELEMENT[id14] occurrences matches {0..1} 	-- vyska
 														}
 													}
 												}
@@ -67,7 +66,7 @@ definition
 							}
 						}
 						state matches {
-							HISTORY[at0008] matches {*}    -- History
+							HISTORY[id9] 
 						}
 					}
 				}
@@ -75,66 +74,57 @@ definition
 		}
 	}
 
-ontology
+terminology
 	term_definitions = <
 		["en"] = <
-			items = <
-				["at0000"] = <
-					text = <"test">
-					description = <"test">
-				>
-				["at0001"] = <
-					text = <"Coded text">
-					description = <"*">
-				>
-				["at0002"] = <
-					text = <"Event Context">
-					description = <"*">
-				>
-				["at0003"] = <
-					text = <"Item tree">
-					description = <"@ internal @">
-				>
-				["at0004"] = <
-					text = <"SECTION">
-					description = <"*">
-				>
-				["at0005"] = <
-					text = <"Nemocnica">
-					description = <"*">
-				>
-				["at0006"] = <
-					text = <"History">
-					description = <"@ internal @">
-				>
-				["at0007"] = <
-					text = <"nalez">
-					description = <"*">
-				>
-				["at0008"] = <
-					text = <"History">
-					description = <"@ internal @">
-				>
-				["at0009"] = <
-					text = <"EVENT">
-					description = <"*">
-				>
-				["at0010"] = <
-					text = <"Item tree">
-					description = <"@ internal @">
-				>
-				["at0011"] = <
-					text = <"CLUSTER">
-					description = <"*">
-				>
-				["at0012"] = <
-					text = <"hmotnost">
-					description = <"*">
-				>
-				["at0013"] = <
-					text = <"vyska">
-					description = <"*">
-				>
+			["id1"] = <
+				text = <"test">
+				description = <"test">
 			>
+			["id2"] = <
+				text = <"Coded text">
+				description = <"*">
+			>
+			["id3"] = <
+				text = <"Event Context">
+				description = <"*">
+			>
+			["id5"] = <
+				text = <"SECTION">
+				description = <"*">
+			>
+			["id6"] = <
+				text = <"Nemocnica">
+				description = <"*">
+			>
+			["id8"] = <
+				text = <"nalez">
+				description = <"*">
+			>
+			["id10"] = <
+				text = <"EVENT">
+				description = <"*">
+			>
+			["id12"] = <
+				text = <"CLUSTER">
+				description = <"*">
+			>
+			["id13"] = <
+				text = <"hmotnost">
+				description = <"*">
+			>
+			["id14"] = <
+				text = <"vyska">
+				description = <"*">
+			>
+			["at1"] = <
+				text = <"(added by post-parse processor)">
+				description = <"(added by post-parse processor)">
+			>
+		>
+	>
+	term_bindings = <
+		["openehr"] = <
+			["at1"] = <http://openehr.org/id/433>
 		>
 	>
