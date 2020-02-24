@@ -12,11 +12,14 @@ description
         ["organisation"] = <"PRosoft">
         ["email"] = <"vjevcak@gmail.com">
     >
-    copyright = <"">
+    copyright = <"PFT">
     details = <
         ["en"] = <
             language = <[ISO_639-1::en]>
-            purpose = <"">
+            purpose = <"blabla">
+            use = <"blabla">
+            misuse = <"blabl">
+            keywords = <"lab", "test">
         >
     >
 
