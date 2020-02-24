@@ -49,15 +49,15 @@ definition
             }
         }
         content matches {
-            OBSERVATION[id9] occurrences matches {1} matches {    -- observation
-                data matches {
-                    HISTORY[id10] occurrences matches {1} matches {    -- history
-                        summary matches {
-                            ITEM_LIST[id11] occurrences matches {1} matches {    -- summary - list
-                                items matches {
-                                    ELEMENT[id12] occurrences matches {1} matches {    -- observation -weight
-                                        value matches {
-                                            DV_TEXT[id13] 
+            SECTION[id14] occurrences matches {1} matches {    -- observation section
+                items matches {
+                    OBSERVATION[id15] occurrences matches {1} matches {    -- observation item
+                        data matches {
+                            HISTORY[id16] occurrences matches {1} matches {    -- history
+                                summary matches {
+                                    ITEM_TREE[id17] occurrences matches {1} matches {    -- summary
+                                        items matches {
+                                            ELEMENT[id18] occurrences matches {1}     -- weight
                                         }
                                     }
                                 }
@@ -65,7 +65,6 @@ definition
                         }
                     }
                 }
-                protocol
             }
         }
     }
@@ -97,21 +96,25 @@ terminology
                 text = <"name">
                 description = <"name">
             >
-            ["id9"] = <
-                text = <"observation">
-                description = <"observation">
+            ["id14"] = <
+                text = <"observation section">
+                description = <"observation section">
             >
-            ["id10"] = <
+            ["id15"] = <
+                text = <"observation item">
+                description = <"observation item">
+            >
+            ["id16"] = <
                 text = <"history">
                 description = <"history">
             >
-            ["id11"] = <
-                text = <"summary - list">
-                description = <"summary - list">
+            ["id17"] = <
+                text = <"summary">
+                description = <"summary">
             >
-            ["id12"] = <
-                text = <"observation -weight">
-                description = <"observation -weight">
+            ["id18"] = <
+                text = <"weight">
+                description = <"weight">
             >
         >
     >
