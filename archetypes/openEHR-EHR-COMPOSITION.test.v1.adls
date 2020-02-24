@@ -1,0 +1,125 @@
+archetype (adl_version=2.0.4; rm_release=1.0.2)
+    openEHR-EHR-COMPOSITION.test.v1.0.0
+
+language
+    original_language = <[ISO_639-1::en]>
+
+description
+    lifecycle_state = <"unmanaged">
+    original_author = <
+        ["date"] = <"02/02/2021">
+        ["name"] = <"Vlado Jevcak">
+        ["organisation"] = <"PRosoft">
+        ["email"] = <"vjevcak@gmail.com">
+    >
+    copyright = <"PFT">
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+            purpose = <"blabla">
+            use = <"blabla">
+            misuse = <"blabl">
+            keywords = <"lab", "test">
+        >
+    >
+
+definition
+    COMPOSITION[id1] occurrences matches {1} matches {    -- test
+        category matches {
+            DV_CODED_TEXT[id2] matches {
+                defining_code matches {[at1]}
+            }
+        }
+        language matches {
+            CODE_PHRASE[id3] occurrences matches {1}     -- en
+        }
+        context matches {
+            EVENT_CONTEXT[id5] occurrences matches {1} matches {    -- header
+                other_context matches {
+                    ITEM_LIST[id6] occurrences matches {1} matches {    -- header list
+                        items matches {
+                            ELEMENT[id7] occurrences matches {1} matches {    -- name
+                                value matches {
+                                    DV_TEXT[id8] 
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        content matches {
+            SECTION[id14] occurrences matches {1} matches {    -- observation section
+                items matches {
+                    OBSERVATION[id15] occurrences matches {1} matches {    -- observation item
+                        data matches {
+                            HISTORY[id16] occurrences matches {1} matches {    -- history
+                                summary matches {
+                                    ITEM_TREE[id17] occurrences matches {1} matches {    -- summary
+                                        items matches {
+                                            ELEMENT[id18] occurrences matches {1}     -- weight
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+terminology
+    term_definitions = <
+        ["en"] = <
+            ["id1"] = <
+                text = <"test">
+                description = <"test">
+            >
+            ["at1"] = <
+                text = <"event">
+                description = <"event">
+            >
+            ["id3"] = <
+                text = <"en">
+                description = <"en">
+            >
+            ["id5"] = <
+                text = <"header">
+                description = <"header">
+            >
+            ["id6"] = <
+                text = <"header list">
+                description = <"header list">
+            >
+            ["id7"] = <
+                text = <"name">
+                description = <"name">
+            >
+            ["id14"] = <
+                text = <"observation section">
+                description = <"observation section">
+            >
+            ["id15"] = <
+                text = <"observation item">
+                description = <"observation item">
+            >
+            ["id16"] = <
+                text = <"history">
+                description = <"history">
+            >
+            ["id17"] = <
+                text = <"summary">
+                description = <"summary">
+            >
+            ["id18"] = <
+                text = <"weight">
+                description = <"weight">
+            >
+        >
+    >
+    term_bindings = <
+        ["openehr"] = <
+            ["at1"] = <http://openehr.org/id/433>
+        >
+    >

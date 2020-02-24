@@ -1,0 +1,153 @@
+archetype (adl_version=2.0.4; rm_release=1.0.2)
+    openEHR-EHR-COMPOSITION.nalez.v1.0.0
+
+language
+    original_language = <[ISO_639-1::sk]>
+    translations = <
+        ["en"] = <>
+    >
+
+description
+    lifecycle_state = <"unmanaged">
+    original_author = <
+        ["reason"] = <"test designer">
+    >
+    copyright = <"">
+    other_contributors = <"Vladislav Jevcak", ...>
+    details = <
+        ["sk"] = <
+            language = <[ISO_639-1::sk]>
+            purpose = <"">
+        >
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+        >
+    >
+
+definition
+    COMPOSITION[id1] occurrences matches {1} matches {    -- nalez
+        category matches {
+            DV_CODED_TEXT[id2] matches {
+                defining_code matches {[at1]}
+            }
+        }
+        context matches {
+            EVENT_CONTEXT[id3] occurrences matches {1} matches {    -- Hlavicka
+                other_context matches {
+                    ITEM_LIST[id4] occurrences matches {1} matches {    -- Hlavicka polozky
+                        items matches {
+                            ELEMENT[id5] occurrences matches {1} matches {    -- Meno
+                                value matches {
+                                    DV_TEXT[id6] 
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        content matches {
+            OBSERVATION[id7] occurrences matches {1} matches {    -- Nalez
+                data matches {
+                    HISTORY[id8] occurrences matches {1} matches {    -- Nalez historia
+                        summary matches {
+                            ITEM_LIST[id9] occurrences matches {1} matches {    -- Nalez Data
+                                items matches {
+                                    ELEMENT[id10] occurrences matches {1} matches {    -- Poloha
+                                        value matches {
+                                            DV_TEXT[id11] 
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+terminology
+    term_definitions = <
+        ["sk"] = <
+            ["id1"] = <
+                text = <"nalez">
+                description = <"nalez">
+            >
+            ["at1"] = <
+                text = <"event">
+                description = <"event">
+            >
+            ["id3"] = <
+                text = <"Hlavicka">
+                description = <"Hlavicka">
+            >
+            ["id4"] = <
+                text = <"Hlavicka polozky">
+                description = <"Hlavicka polozky">
+            >
+            ["id5"] = <
+                text = <"Meno">
+                description = <"Meno">
+            >
+            ["id7"] = <
+                text = <"Nalez">
+                description = <"Nalez">
+            >
+            ["id8"] = <
+                text = <"Nalez historia">
+                description = <"Nalez historia">
+            >
+            ["id9"] = <
+                text = <"Nalez Data">
+                description = <"Nalez Data">
+            >
+            ["id10"] = <
+                text = <"Poloha">
+                description = <"Poloha">
+            >
+        >
+        ["en"] = <
+            ["id1"] = <
+                text = <"*nalez (sk)">
+                description = <"*nalez (sk)">
+            >
+            ["at1"] = <
+                text = <"*event (sk)">
+                description = <"*event (sk)">
+            >
+            ["id3"] = <
+                text = <"*Hlavicka (sk)">
+                description = <"*Hlavicka (sk)">
+            >
+            ["id4"] = <
+                text = <"*Hlavicka polozky (sk)">
+                description = <"*Hlavicka polozky (sk)">
+            >
+            ["id5"] = <
+                text = <"*Meno (sk)">
+                description = <"*Meno (sk)">
+            >
+            ["id7"] = <
+                text = <"*Nalez (sk)">
+                description = <"*Nalez (sk)">
+            >
+            ["id8"] = <
+                text = <"*Nalez historia (sk)">
+                description = <"*Nalez historia (sk)">
+            >
+            ["id9"] = <
+                text = <"*Nalez Data (sk)">
+                description = <"*Nalez Data (sk)">
+            >
+            ["id10"] = <
+                text = <"*Poloha (sk)">
+                description = <"*Poloha (sk)">
+            >
+        >
+    >
+    term_bindings = <
+        ["openehr"] = <
+            ["at1"] = <http://openehr.org/id/433>
+        >
+    >

@@ -1,0 +1,10 @@
+{
+  "archetypes" : [ {
+    "id" : "openEHR-EHR-OBSERVATION.lab_test-result.v1.0.0",
+    "rmType" : "OBSERVATION",
+    "name" : "Laboratory test result",
+    "path" : "archetypes/openEHR-EHR-OBSERVATION.lab_test-result.v1.adls",
+    "sha" : "f812317a7c601e99a16dce06430d726c7dc8aaa9",
+    "languages" : [ "en" ]
+  } ]
+}
