@@ -6,5 +6,13 @@
     "path" : "archetypes/openEHR-EHR-OBSERVATION.lab_test-result.v1.adls",
     "sha" : "f812317a7c601e99a16dce06430d726c7dc8aaa9",
     "languages" : [ "en" ]
-  } ]
+  },
+  {
+    "id" : "openEHR-EHR-OBSERVATION.test.v1.0.0",
+    "rmType" : "COMPOSITION",
+    "name" : "test",
+    "path" : "archetypes/openEHR-EHR-COMPOSITION.test.v1.adls",
+    "sha" : "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+    "languages" : [ "en" ]
+  }]
 }
