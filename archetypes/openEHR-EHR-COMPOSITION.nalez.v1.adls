@@ -3,6 +3,9 @@ archetype (adl_version=2.0.4; rm_release=1.0.2)
 
 language
     original_language = <[ISO_639-1::sk]>
+    translations = <
+        ["en"] = <>
+    >
 
 description
     lifecycle_state = <"unmanaged">
@@ -15,6 +18,9 @@ description
         ["sk"] = <
             language = <[ISO_639-1::sk]>
             purpose = <"">
+        >
+        ["en"] = <
+            language = <[ISO_639-1::en]>
         >
     >
 
@@ -99,6 +105,44 @@ terminology
             ["id10"] = <
                 text = <"Poloha">
                 description = <"Poloha">
+            >
+        >
+        ["en"] = <
+            ["id1"] = <
+                text = <"*nalez (sk)">
+                description = <"*nalez (sk)">
+            >
+            ["at1"] = <
+                text = <"*event (sk)">
+                description = <"*event (sk)">
+            >
+            ["id3"] = <
+                text = <"*Hlavicka (sk)">
+                description = <"*Hlavicka (sk)">
+            >
+            ["id4"] = <
+                text = <"*Hlavicka polozky (sk)">
+                description = <"*Hlavicka polozky (sk)">
+            >
+            ["id5"] = <
+                text = <"*Meno (sk)">
+                description = <"*Meno (sk)">
+            >
+            ["id7"] = <
+                text = <"*Nalez (sk)">
+                description = <"*Nalez (sk)">
+            >
+            ["id8"] = <
+                text = <"*Nalez historia (sk)">
+                description = <"*Nalez historia (sk)">
+            >
+            ["id9"] = <
+                text = <"*Nalez Data (sk)">
+                description = <"*Nalez Data (sk)">
+            >
+            ["id10"] = <
+                text = <"*Poloha (sk)">
+                description = <"*Poloha (sk)">
             >
         >
     >
