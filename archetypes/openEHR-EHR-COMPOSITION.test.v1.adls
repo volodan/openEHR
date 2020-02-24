@@ -33,6 +33,40 @@ definition
         language matches {
             CODE_PHRASE[id3] occurrences matches {1}     -- en
         }
+        context matches {
+            EVENT_CONTEXT[id5] occurrences matches {1} matches {    -- header
+                other_context matches {
+                    ITEM_LIST[id6] occurrences matches {1} matches {    -- header list
+                        items matches {
+                            ELEMENT[id7] occurrences matches {1} matches {    -- name
+                                value matches {
+                                    DV_TEXT[id8] 
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        content matches {
+            OBSERVATION[id9] occurrences matches {1} matches {    -- observation
+                data matches {
+                    HISTORY[id10] occurrences matches {1} matches {    -- history
+                        summary matches {
+                            ITEM_LIST[id11] occurrences matches {1} matches {    -- summary - list
+                                items matches {
+                                    ELEMENT[id12] occurrences matches {1} matches {    -- observation -weight
+                                        value matches {
+                                            DV_TEXT[id13] 
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
 terminology
@@ -49,6 +83,34 @@ terminology
             ["id3"] = <
                 text = <"en">
                 description = <"en">
+            >
+            ["id5"] = <
+                text = <"header">
+                description = <"header">
+            >
+            ["id6"] = <
+                text = <"header list">
+                description = <"header list">
+            >
+            ["id7"] = <
+                text = <"name">
+                description = <"name">
+            >
+            ["id9"] = <
+                text = <"observation">
+                description = <"observation">
+            >
+            ["id10"] = <
+                text = <"history">
+                description = <"history">
+            >
+            ["id11"] = <
+                text = <"summary - list">
+                description = <"summary - list">
+            >
+            ["id12"] = <
+                text = <"observation -weight">
+                description = <"observation -weight">
             >
         >
     >
