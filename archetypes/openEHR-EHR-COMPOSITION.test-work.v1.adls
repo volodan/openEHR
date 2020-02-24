@@ -1,9 +1,6 @@
 archetype (adl_version=1.4; uid=30dad108-9c3b-4dec-b038-673d11c4ab34)
 	openEHR-EHR-COMPOSITION.test-work.v1.0.0
 
-concept
-	[at0000]
-
 language
 	original_language = <[ISO_639-1::en]>
 
