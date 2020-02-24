@@ -6,7 +6,11 @@ language
 
 description
     lifecycle_state = <"unmanaged">
+    original_author = <
+        ["reason"] = <"test designer">
+    >
     copyright = <"">
+    other_contributors = <"Vladislav Jevcak", ...>
     details = <
         ["sk"] = <
             language = <[ISO_639-1::sk]>
