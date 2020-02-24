@@ -1,0 +1,212 @@
+archetype (adl_version=2.0.6; rm_release=1.0.2)
+	openehr-EHR-COMPOSITION.display_findings.v0.0.1
+
+language
+	original_language = <[ISO_639-1::sk]>
+
+description
+	lifecycle_state = <"unmanaged">
+	original_author = <
+		["name"] = <"My Name <my_email_id@my_org.org>">
+		["organisation"] = <"Org name <http://www.my_org.org>">
+	>
+	copyright = <"Copyright (c) 2020 My Name OR Some Org">
+	licence = <"Creative Commons CC-BY 4.0 unported <http://creativecommons.org/>">
+	details = <
+		["sk"] = <
+			language = <[ISO_639-1::sk]>
+			purpose = <"Nalez zo zobrazovacieho vysetrenia">
+		>
+	>
+
+
+definition
+	COMPOSITION[id1] matches {	-- Nalez zo zobrazovacieho vysetrenia
+                            context matches {
+                                         EVENT_CONTEXT[id23] matches {
+                                                    health_care_facility matches {
+                                                             PARTY_IDENTIFIED[id27] matches {
+                                                                     name  matches {"Nemocnica sv. Jakuba Bardejov","FNLP Kosice"}
+                                                             }
+                                                    }
+                                                   other_context matches {
+                                                              ITEM_LIST[id24] matches {
+                                                                        items matches {
+							ELEMENT[id25] matches {	-- Subjektivne obtiaze
+								value matches {
+									DV_TEXT[id26] 	-- 
+								}
+							}
+                                                                               }
+                                                                 }
+                                                    }
+                                            }
+                                 }
+		content matches {
+			SECTION[id3] matches {	-- Telo nalezu
+				items matches {
+					OBSERVATION[id4] matches {	-- Klinicka cast
+						data matches {
+							HISTORY[id6] matches {	-- 
+								summary matches {
+									ITEM_TREE[id5] matches {	-- 
+										items matches {
+											ELEMENT[id7] matches {	-- Subjektivne obtiaze
+												value matches {
+													DV_TEXT[id8] 	-- 
+												}
+											}
+											CLUSTER[id9] matches {	-- Klinicke hodnoty
+												items matches {
+													ELEMENT[id10] matches {	-- Hmotnost
+														value matches {
+															DV_QUANTITY[id11] matches {	-- 
+																units matches {"kg", "g"}
+																magnitude matches {|0.0..1000.0|, |0.0..100000.0|}
+															}
+														}
+													}
+													ELEMENT[id12] matches {	-- Vyska
+														value matches {
+															DV_QUANTITY[id13] matches {	-- 
+																units matches {"m", "cm"}
+																magnitude matches {|0.0..10.0|, |0.0..1000.0|}
+															}
+														}
+													}
+
+												}
+											}
+										--	ELEMENT[id14] matches {	-- Subjektivne obtiaze
+										--		value matches {
+										--			DV_CODED_TEXT[id15] matches {
+                    								--				defining_code matches {[ac1]} 
+                								--			}
+										--		}
+										--	}
+
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+	}
+
+terminology
+	term_definitions = <
+		["sk"] = <
+			["id1"] = <
+				text = <"Nalez zo zobrazovacieho vysetrenia">
+				description = <"">
+			>
+			["id3"] = <
+				text = <"Telo nalezu">
+				description = <"">
+			>
+			["id4"] = <
+				text = <"Klinicka cast">
+				description = <"">
+			>
+			["id5"] = <
+				text = <"">
+				description = <"">
+			>
+			["id6"] = <
+				text = <"">
+				description = <"">
+			>
+			["id7"] = <
+				text = <"Subjektivne obtiaze">
+				description = <"">
+			>
+			["id8"] = <
+				text = <"">
+				description = <"">
+			>
+			["id9"] = <
+				text = <"Klinicke hodnoty">
+				description = <"">
+			>
+			["id10"] = <
+				text = <"Hmotnost">
+				description = <"">
+			>
+			["id11"] = <
+				text = <"">
+				description = <"">
+			>
+			["id12"] = <
+				text = <"Vyska">
+				description = <"">
+			>
+			["id13"] = <
+				text = <"">
+				description = <"">
+			>
+    			["id14"] = <
+				text = <"Modalita">
+				description = <"">
+			>
+			["id15"] = <
+				text = <"">
+				description = <"">
+			>
+			["id16"] = <
+				text = <"RTG">
+				description = <"">
+			>
+			["id17"] = <
+
+				text = <"USG">
+				description = <"">
+			>
+			["id18"] = <
+				text = <"MR">
+				description = <"">
+			>
+			["id19"] = <
+				text = <"CT">
+				description = <"">
+			>
+			["id20"] = <
+				text = <"MMG">
+				description = <"">
+			>
+			["id21"] = <
+				text = <"DENZ">
+				description = <"">
+			>
+			["id22"] = <
+				text = <"">
+				description = <"">
+			>
+			["id23"] = <
+				text = <"">
+				description = <"">
+			>
+
+			["id24"] = <
+				text = <"">
+				description = <"">
+			>
+			["id25"] = <
+				text = <"Location">
+				description = <"">
+			>
+			["id26"] = <
+				text = <"">
+				description = <"">
+			>
+			["id27"] = <
+				text = <"">
+				description = <"">
+			>
+
+
+		>
+	>
