@@ -1,0 +1,56 @@
+archetype (adl_version=2.0.4; rm_release=1.0.2)
+    openEHR-EHR-COMPOSITION.test.v1.0.0
+
+language
+    original_language = <[ISO_639-1::en]>
+
+description
+    lifecycle_state = <"unmanaged">
+    original_author = <
+        ["date"] = <"02/02/2021">
+        ["name"] = <"Vlado Jevcak">
+        ["organisation"] = <"PRosoft">
+        ["email"] = <"vjevcak@gmail.com">
+    >
+    copyright = <"">
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+            purpose = <"">
+        >
+    >
+
+definition
+    COMPOSITION[id1] occurrences matches {1} matches {    -- test
+        category matches {
+            DV_CODED_TEXT[id2] matches {
+                defining_code matches {[at1]}
+            }
+        }
+        language matches {
+            CODE_PHRASE[id3] occurrences matches {1}     -- en
+        }
+    }
+
+terminology
+    term_definitions = <
+        ["en"] = <
+            ["id1"] = <
+                text = <"test">
+                description = <"test">
+            >
+            ["at1"] = <
+                text = <"event">
+                description = <"event">
+            >
+            ["id3"] = <
+                text = <"en">
+                description = <"en">
+            >
+        >
+    >
+    term_bindings = <
+        ["openehr"] = <
+            ["at1"] = <http://openehr.org/id/433>
+        >
+    >
